@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
-import {LoginService} from "./login.service";
+import {DataService} from "../data.service";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
-  providers:[LoginService]
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
 
@@ -15,32 +14,25 @@ export class LoginComponent implements OnInit {
         password : ""
     };
 
-  constructor(private router : Router , private loginService : LoginService) { }
+  constructor(private router : Router , private dataService: DataService) { }
 
   ngOnInit() {
 
   }
 
   seConnecter(){
-    this.loginService.login(this.user)
+    this.dataService.login(this.user)
         .subscribe(
-            data => this.handleUser(data),
-            error => this.handleError(error)
+            data => {
+              console.log(data);
+              this.dataService.setTocken(data.id);
+              this.dataService.setUser(data.user);
+            },
+            error => {
+              console.log(error);
+            }
         );
 
   }
-
-  handleUser(data){
-      //console.log(data);
-      //this.router.navigate(['/home']);
-      document.getElementById('home').click();
-  }
-
-  handleError(error){
-      console.log(error);
-      this.user.password = "";
-  }
-
-
 
 }
