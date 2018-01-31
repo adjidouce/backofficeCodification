@@ -213,7 +213,7 @@
           </ul>
         </li>
         <!-- #END# Tasks -->
-        <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li>
+        <li (click)="deconnexion();" class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">power_settings_new</i></a></li>
       </ul>
     </div>
   </div>
@@ -248,7 +248,7 @@
       <ul class="list">
         <li class="header">Menu</li>
         <li>
-          <a href="/home/main">
+          <a [routerLink]="['/home/main']">
             <i class="material-icons">home</i>
             <span>Accueil</span>
           </a>
@@ -257,6 +257,12 @@
           <a [routerLink]="['/home/etudiant']">
             <i class="material-icons">school</i>
             <span>Etudiant</span>
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="['/home/batiments']">
+            <i class="material-icons">location_on</i>
+            <span>Creer batiment</span>
           </a>
         </li>
       </ul>

@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
               console.log(data);
               this.dataService.setTocken(data.id);
               this.dataService.setUser(data.user);
+              this.router.navigate(["/home/main"])
             },
             error => {
               console.log(error);

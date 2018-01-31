@@ -11,6 +11,7 @@ import {AgmCoreModule} from "angular2-google-maps/core";
 import {Ng2SmartTableModule} from "ng2-smart-table";
 import {FormsModule} from "@angular/forms";
 import {DataService} from "./data.service";
+import { BatimentComponent } from './home/batiment/batiment.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {DataService} from "./data.service";
     AppComponent,
     HomeComponent,
     LoginComponent,
-    MainComponent
+    MainComponent,
+    BatimentComponent
   ],
   imports: [
     BrowserModule,

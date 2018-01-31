@@ -13,12 +13,12 @@ export class AppComponent implements OnInit{
   constructor(private router: Router, private dataService : DataService) { }
   ngOnInit()
   {
-    if(this.dataService.isConnected()==true)
+    /*if(this.dataService.isConnected()==true)
     {
       this.router.navigate(["/home/main"]);
     }
     else {
-      this.router.navigate([""]);
-    }
+      this.router.navigate(["/"]);
+    }*/
   }
 }
