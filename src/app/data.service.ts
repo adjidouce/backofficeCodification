@@ -13,7 +13,7 @@ export class DataService {
   }
 
   login(data) {
-    return this.http.post(this.baseUrl + "admins/login?include=user", data)
+    return this.http.post(this.baseUrl + "Admins/login?include=user", data)
       .map((res:Response) => res.json());
   }
 

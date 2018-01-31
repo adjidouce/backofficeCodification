@@ -253,24 +253,10 @@
             <span>Accueil</span>
           </a>
         </li>
-        <li class="">
-          <a  class="menu-toggle">
-            <i class="material-icons">work</i>
-            <span>Dossiers</span>
-          </a>
-          <ul class="ml-menu">
-            <li>
-              <a href="home/ajouter">Ouvrir un dossier</a>
-            </li>
-            <li>
-              <a href="home/list">Gestion des dossiers</a>
-            </li>
-          </ul>
-        </li>
         <li>
-          <a href="home/tracker">
-            <i class="material-icons">location_on</i>
-            <span>Tracking-cont</span>
+          <a [routerLink]="['/home/etudiant']">
+            <i class="material-icons">school</i>
+            <span>Etudiant</span>
           </a>
         </li>
       </ul>
