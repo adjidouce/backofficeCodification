@@ -11,7 +11,9 @@ import {Router} from "@angular/router";
 })
 export class HomeComponent implements OnInit {
 
-  dataUser;
+  dataUser = {
+    email:''
+  };
   dataUserError;
   userId = localStorage.getItem('userId');
 

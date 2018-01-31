@@ -1,0 +1,141 @@
+<br><br>
+<!-- Widgets -->
+<div class="row">
+
+  <div class="col-lg-4">
+    <div class="info-box bg-blue hover-expand-effect">
+      <div class="icon">
+        <i class="material-icons">assignment_ind</i>
+      </div>
+      <div class="content">
+        <div class="text">Etudiants</div>
+        <div class="number count-to" data-from="0" data-to="5" data-speed="1000" data-fresh-interval="50">
+          {{NombreEtudiants}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="info-box bg-blue hover-expand-effect">
+      <div class="icon">
+        <i class="material-icons">assignment_turned_in</i>
+      </div>
+      <div class="content">
+        <div class="text">Codifier</div>
+        <div class="number count-to" data-from="0" data-to="5" data-speed="1000" data-fresh-interval="50">
+          {{NombreEtudiantCodifier}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="info-box bg-blue hover-expand-effect">
+      <div class="icon">
+        <i class="material-icons">assignment_late</i>
+      </div>
+      <div class="content">
+        <div class="text">Reserver</div>
+        <div class="number count-to" data-from="0" data-to="5" data-speed="1000" data-fresh-interval="50">
+          {{NombreEtudiantReserver}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="row clearfix">
+  <!-- Task Info -->
+  <div class="col-xs-12 col-sm-12 col-md-8 col-lg-12">
+    <div class="card">
+      <div class="header">
+        <h2 align="center">Liste de tous les étudiants</h2>
+        <ul class="header-dropdown m-r--5">
+          <li class="dropdown">
+            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button"
+               aria-haspopup="true" aria-expanded="false">
+              <i class="material-icons">more_vert</i>
+            </a>
+            <ul class="dropdown-menu pull-right">
+              <li><a href="javascript:void(0);">Action</a></li>
+              <li><a href="javascript:void(0);">Another action</a></li>
+              <li><a href="javascript:void(0);">Something else here</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="body">
+        <div class="table-responsive">
+          <ng2-smart-table [settings]="settingsEtudiants" [source]="dataEtudiant"></ng2-smart-table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- #END# Task Info -->
+</div>
+
+<div class="row clearfix">
+  <!-- Task Info -->
+  <div class="col-xs-12 col-sm-12 col-md-8 col-lg-12">
+    <div class="card">
+      <div class="header">
+          <h2 align="center">Statistiques (Etudiant)</h2>
+        <ul class="header-dropdown m-r--5">
+          <li class="dropdown">
+            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button"
+               aria-haspopup="true" aria-expanded="false">
+              <i class="material-icons">more_vert</i>
+            </a>
+            <ul class="dropdown-menu pull-right">
+              <li><a href="javascript:void(0);">Action</a></li>
+              <li><a href="javascript:void(0);">Another action</a></li>
+              <li><a href="javascript:void(0);">Something else here</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="body">
+        <div class="table-responsive">
+          <div class="row">
+            <div class="col-md-6">
+              <chart [options]="options"></chart>
+            </div>
+            <div class="col-md-6">
+              <chart [options]="options1"></chart>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- #END# Task Info -->
+  <div class="row clearfix">
+    <!-- Task Info -->
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-12">
+      <div class="card">
+        <div class="header">
+          <h2 align="center">Liste de tous les étudiants - reserer/codifier</h2>
+          <ul class="header-dropdown m-r--5">
+            <li class="dropdown">
+              <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                 aria-haspopup="true" aria-expanded="false">
+                <i class="material-icons">more_vert</i>
+              </a>
+              <ul class="dropdown-menu pull-right">
+                <li><a href="javascript:void(0);">Action</a></li>
+                <li><a href="javascript:void(0);">Another action</a></li>
+                <li><a href="javascript:void(0);">Something else here</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="body">
+          <div class="table-responsive">
+            <ng2-smart-table [settings]="settingsEtudiants" [source]="dataEtudiant"></ng2-smart-table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- #END# Task Info -->
+  </div>
+  <a (click)="getAllEtudiant();" id="begin"></a>

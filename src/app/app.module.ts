@@ -34,7 +34,7 @@ import {ToasterModule} from "angular2-toaster";
       apiKey : "AIzaSyDGknNvSyW4ga2fcdw0lJIvh9nmwKY02hY",
       libraries: ["places"]//'AIzaSyBUneV4-iX7nHDmSnKluSse6w7_rnbHZEI'
     }),
-    Ng2SmartTableModule
+    Ng2SmartTableModule,
   ],
   providers: [
     DataService
