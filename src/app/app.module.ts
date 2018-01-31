@@ -11,6 +11,8 @@ import {AgmCoreModule} from "angular2-google-maps/core";
 import {Ng2SmartTableModule} from "ng2-smart-table";
 import {FormsModule} from "@angular/forms";
 import {DataService} from "./data.service";
+import { BatimentComponent } from './home/batiment/batiment.component';
+import {ToasterModule} from "angular2-toaster";
 
 
 @NgModule({
@@ -18,19 +20,21 @@ import {DataService} from "./data.service";
     AppComponent,
     HomeComponent,
     LoginComponent,
-    MainComponent
+    MainComponent,
+    BatimentComponent
   ],
   imports: [
     BrowserModule,
     routing,
     FormsModule,
+    ToasterModule,
     HomeModule,
     FormsModule,
     AgmCoreModule.forRoot({
       apiKey : "AIzaSyDGknNvSyW4ga2fcdw0lJIvh9nmwKY02hY",
       libraries: ["places"]//'AIzaSyBUneV4-iX7nHDmSnKluSse6w7_rnbHZEI'
     }),
-    Ng2SmartTableModule
+    Ng2SmartTableModule,
   ],
   providers: [
     DataService

@@ -213,7 +213,7 @@
           </ul>
         </li>
         <!-- #END# Tasks -->
-        <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li>
+        <li (click)="deconnexion();" class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">power_settings_new</i></a></li>
       </ul>
     </div>
   </div>
@@ -229,7 +229,7 @@
       </div>
       <div class="info-container">
         <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Administrateur </div>
-        <div class="email">{{ dataUser.email }}</div>
+        <div class="email"></div>
         <div class="btn-group user-helper-dropdown">
           <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
           <ul class="dropdown-menu pull-right">
@@ -248,29 +248,21 @@
       <ul class="list">
         <li class="header">Menu</li>
         <li>
-          <a href="/home/main">
+          <a [routerLink]="['/home/main']">
             <i class="material-icons">home</i>
             <span>Accueil</span>
           </a>
         </li>
-        <li class="">
-          <a  class="menu-toggle">
-            <i class="material-icons">work</i>
-            <span>Dossiers</span>
+        <li>
+          <a [routerLink]="['/home/etudiant']">
+            <i class="material-icons">school</i>
+            <span>Etudiant</span>
           </a>
-          <ul class="ml-menu">
-            <li>
-              <a href="home/ajouter">Ouvrir un dossier</a>
-            </li>
-            <li>
-              <a href="home/list">Gestion des dossiers</a>
-            </li>
-          </ul>
         </li>
         <li>
-          <a href="home/tracker">
+          <a [routerLink]="['/home/batiments']">
             <i class="material-icons">location_on</i>
-            <span>Tracking-cont</span>
+            <span>Creer batiment</span>
           </a>
         </li>
       </ul>
