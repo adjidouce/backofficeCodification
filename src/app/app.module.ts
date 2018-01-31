@@ -12,6 +12,7 @@ import {Ng2SmartTableModule} from "ng2-smart-table";
 import {FormsModule} from "@angular/forms";
 import {DataService} from "./data.service";
 import { BatimentComponent } from './home/batiment/batiment.component';
+import {ToasterModule} from "angular2-toaster";
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { BatimentComponent } from './home/batiment/batiment.component';
     BrowserModule,
     routing,
     FormsModule,
+    ToasterModule,
     HomeModule,
     FormsModule,
     AgmCoreModule.forRoot({
