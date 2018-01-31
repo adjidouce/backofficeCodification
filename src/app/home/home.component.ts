@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HomeService} from "./home.service";
+import {DataService} from "../data.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -14,12 +16,18 @@ export class HomeComponent implements OnInit {
   userId = localStorage.getItem('userId');
 
 
-  constructor(private homeService : HomeService) { }
+  constructor(private router: Router, private dataService: DataService, private homeService : HomeService) { }
 
 
   ngOnInit() {
     this.getHandleUser(this.userId);
     console.log(this.userId);
+  }
+
+  deconnexion()
+  {
+    this.dataService.deconnect();
+    this.router.navigate(["/"]);
   }
 
   getHandleUser(id){
