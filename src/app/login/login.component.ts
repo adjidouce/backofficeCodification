@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {DataService} from "../data.service";
+import {ToasterService} from "angular2-toaster";
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
         password : ""
     };
 
-  constructor(private router : Router , private dataService: DataService) { }
+  constructor(private router : Router , private dataService: DataService,private toasterService: ToasterService) { }
 
   ngOnInit() {
 
@@ -31,6 +32,8 @@ export class LoginComponent implements OnInit {
             },
             error => {
               console.log(error);
+              this.toasterService.pop('error','Echec de connexion', 'Email o mot de passeincorrecte');
+              this.user.password="";
             }
         );
 
